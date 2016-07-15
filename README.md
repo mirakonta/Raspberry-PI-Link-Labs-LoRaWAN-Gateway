@@ -20,7 +20,7 @@ Now you're ready to start the software setup.
 
 ## Software setup (Raspbian)
 
-- Download [Raspbian Jessie](https://www.raspberrypi.org/downloads/)
+- Download [Raspbian Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/)
 - Follow the [installation instruction](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to create the SD card
 - Connect an Ethernet cable to the RPi
 - Plug the power supply of the RPi which will also power the concentrator board (**WARNING**: never power up without the antenna!)
@@ -33,28 +33,6 @@ Now you're ready to start the software setup.
         $ sudo raspi-config
 
 - Reboot
-- Configure locales and time zone:
-
-        $ sudo dpkg-reconfigure locales
-        $ sudo dpkg-reconfigure tzdata
-
-- Remove desktop-related packages:
-
-        $ sudo apt-get install deborphan
-        $ sudo apt-get autoremove --purge libx11-.* lxde-.* raspberrypi-artwork xkb-data omxplayer penguinspuzzle sgml-base xml-core alsa-.* cifs-.* samba-.* fonts-.* desktop-* gnome-.*
-        $ sudo apt-get autoremove --purge $(deborphan)
-        $ sudo apt-get autoremove --purge
-        $ sudo apt-get autoclean
-        $ sudo apt-get update
-
-- Create new user for linklabs and add it to sudoers
-
-        $ sudo adduser linklabs 
-        $ sudo adduser linklabs sudo
-
-- Logout and login as `linklabs` and remove the default `pi` user
-
-        $ sudo userdel -rf pi
 
 - Clone the installer and start the installation
 
