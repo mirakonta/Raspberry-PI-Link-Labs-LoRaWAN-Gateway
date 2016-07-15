@@ -41,7 +41,7 @@ if [ ! -d lora_gateway ]; then
 else
     pushd lora_gateway
     git reset --hard
-    git pull
+    #git pull
 fi
 
 sed -i 's/cs_change = 1/cs_change = 0/g' libloragw/src/loragw_spi.native.c
@@ -56,7 +56,7 @@ if [ ! -d packet_forwarder ]; then
     pushd packet_forwarder
 else
     pushd packet_forwarder
-    git pull
+    #git pull
     git reset --hard
 fi
 
