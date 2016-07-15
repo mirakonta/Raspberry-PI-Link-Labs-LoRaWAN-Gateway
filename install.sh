@@ -66,6 +66,8 @@ popd
 
 # Symlink
 if [ ! -d bin ]; then mkdir bin; fi
+if [ -f ./bin/basic_pkt_fwd ]; then rm ./bin/basic_pkt_fwd; fi
+if [ -f ./bin/beacon_pkt_fwd ]; then rm ./bin/beacon_pkt_fwd; fi
 if [ -f ./bin/gps_pkt_fwd ]; then rm ./bin/gps_pkt_fwd; fi
 ln -s $INSTALL_DIR/packet_forwarder/basic_pkt_fwd/basic_pkt_fwd ./bin/basic_pkt_fwd
 ln -s $INSTALL_DIR/packet_forwarder/beacon_pkt_fwd/beacon_pkt_fwd ./bin/beacon_pkt_fwd
@@ -81,7 +83,7 @@ echo "Installation completed."
 
 # Start packet forwarder as a service
 cp ./start.sh $INSTALL_DIR/bin/
-cp ./linklabs.service /lib/systemd/system/
+cp ./linklabs.service /etc/systemd/system/
 systemctl enable linklabs.service
 
 echo "The system will reboot in 5 seconds..."
