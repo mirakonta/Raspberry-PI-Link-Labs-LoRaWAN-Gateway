@@ -28,6 +28,7 @@ fi
 echo "Installing dependencies..."
 sudo apt-get install swig python-dev -y
 sudo apt-get install WiringPi -y
+sudo apt-get install Git -y
 
 # Install LoRaWAN packet forwarder repositories
 INSTALL_DIR="/opt/linklabs"
@@ -36,7 +37,7 @@ pushd $INSTALL_DIR
 
 # Build LoRa gateway app
 if [ ! -d lora_gateway ]; then
-    git clone https://github.com/Lora-net/lora_gateway.git
+    git clone --branch v3.2.1 https://github.com/Lora-net/lora_gateway.git
     pushd lora_gateway
 else
     pushd lora_gateway
@@ -52,7 +53,7 @@ popd
 
 # Build packet forwarder
 if [ ! -d packet_forwarder ]; then
-    git clone https://github.com/Lora-net/packet_forwarder.git
+    git clone --branch v2.2.1 https://github.com/Lora-net/packet_forwarder.git
     pushd packet_forwarder
 else
     pushd packet_forwarder
