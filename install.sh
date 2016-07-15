@@ -28,7 +28,6 @@ fi
 echo "Installing dependencies..."
 sudo apt-get install swig python-dev -y
 sudo apt-get install WiringPi -y
-sudo apt-get install Git -y
 
 # Install LoRaWAN packet forwarder repositories
 INSTALL_DIR="/opt/linklabs"
@@ -76,7 +75,7 @@ ln -s $INSTALL_DIR/packet_forwarder/gps_pkt_fwd/gps_pkt_fwd ./bin/gps_pkt_fwd
 cp -f ./packet_forwarder/gps_pkt_fwd/global_conf.json ./bin/global_conf.json
 
 # Reset gateway ID based on MAC
-./packet_forwarder/reset_pkt_fwd.sh start ./bin/local_conf.json
+./packet_forwarder/reset_pkt_fwd.sh start ./bin/global_conf.json
 
 popd
 
