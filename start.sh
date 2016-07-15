@@ -16,4 +16,4 @@ while [[ $(ping -c1 google.com 2>&1 | grep " 0% packet loss") == "" ]]; do
   done
 
 # Fire up the forwarder.
-./gps_pkt_fwd
+/opt/linklabs/bin/gps_pkt_fwd
