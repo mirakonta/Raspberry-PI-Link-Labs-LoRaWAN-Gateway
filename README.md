@@ -28,7 +28,7 @@ Now you're ready to start the software setup.
 - Plug the power supply of the RPi which will also power the concentrator board (**WARNING**: never power up without the antenna!)
 - From a computer in the same LAN, `ssh` into the RPi using the default hostname:
 
-        local $ ssh pi@raspberrypi.local
+        $ ssh pi@raspberrypi.local
 
 - Use `raspi-config` utility to: 1) disable graphical boot mode and 2) to **enable SPI** (`Advanced options -> SPI`):
 
@@ -38,7 +38,7 @@ Now you're ready to start the software setup.
 
 - Clone the installer and start the installation
 
-        $ sudo apt-get install Git -y
+        $ sudo apt-get install git -y
         $ git clone https://github.com/mirakonta/Raspberry-PI-Link-Labs-LoRaWAN-Gateway.git ~/linklabs
         $ cd ~/linklabs
         $ sudo ./install.sh
