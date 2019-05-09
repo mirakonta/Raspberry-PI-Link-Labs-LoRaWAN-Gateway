@@ -27,7 +27,7 @@ fi
 # Check dependencies
 echo "Installing dependencies..."
 sudo apt-get install swig python-dev -y
-sudo apt-get install WiringPi -y
+sudo apt-get install wiringpi -y
 
 # Install LoRaWAN packet forwarder repositories
 INSTALL_DIR="/opt/linklabs"
